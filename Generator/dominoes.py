@@ -83,12 +83,3 @@ def toFile(filename, n, board, solution):
     for i in solution:
         file.write(str(i) + " ")
     file.write("\n")
-
-
-#create_puzzle(10)
-#create_puzzle(8)
-#create_puzzle(5)
-#create_puzzle(4)
-#create_puzzle(3)
-#create_puzzle(2)
-#create_puzzle(1)

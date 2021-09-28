@@ -1,4 +1,3 @@
-
 """
  Algoritmo que revisa todas las posibles soluciones para completar el tablero
 """
