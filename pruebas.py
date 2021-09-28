@@ -30,8 +30,10 @@ def creacion(n):
 #Recibie un n para saber cual algoritmo llamar 0 = Fuerza Bruta, 1 = Backtracking
 def main(m):
     if(m == 0):
+        print("Solucion Fuerza Bruta")
         print(main_FB(copy.deepcopy(Tablero),copy.deepcopy(Fichas)))
     elif(m == 1):
+        print("Solucion BackTracking")
         main_btk(copy.deepcopy(Tablero))
 #######################################
 #        Main para Fuerza Bruta       #
@@ -81,4 +83,20 @@ def main_btk(board):
     Medicion_Analitica.append(time_an)
     for coord in hist:
         lista_resultados.append(result[coord[0]][coord[1]])
+    print("Los resultados obtenidos de las mediciones: ")
+    print('- Empirico: ',Medicion_Empirica)
+    print('- Analitico: ',Medicion_Analitica)    
     print(lista_resultados)
+
+#######################################
+#        Main para pruebas            #
+#######################################
+
+def pruebas():
+    #lista_entrada = [1,2,4,2,5,3,4,1,3,5,4,5,5,2]
+    lista_entrada = [1,2,3]
+    for n in lista_entrada:
+        creacion(n)
+        main(0)
+        main(1)
+        print("\n")
