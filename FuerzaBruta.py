@@ -18,7 +18,7 @@ def fuerza_bruta(board,tiles,solut):
             for j in range(len(board[i])):
 
                 #Podas
-                if type(board[i][j]) == int:
+                if board[i][j] != -1:
                      
                     #Pruebas de posiciones, se utilizara valores binarios 0 = horizontal / 1 = vertical
                     if(solut[0] == 0):
@@ -28,8 +28,8 @@ def fuerza_bruta(board,tiles,solut):
                             buscar.append(board[i][j+1])
 
                             #Saber que no tengo que volver a pasar por ahí
-                            board[i][j] = str(board[i][j])
-                            board[i][j+1] = str(board[i][j+1])
+                            board[i][j] = -1
+                            board[i][j+1] = -1
                         
         
                         except IndexError:
@@ -43,8 +43,8 @@ def fuerza_bruta(board,tiles,solut):
                             buscar.append(board[i+1][j])
 
                             #Saber que no tengo que volver a pasar por ahí
-                            board[i][j] = str(board[i][j])
-                            board[i+1][j] = str(board[i+1][j])
+                            board[i][j] = -1
+                            board[i+1][j] = -1
                         
                         except IndexError:
                             return False    
