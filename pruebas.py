@@ -31,7 +31,11 @@ def creacion(n):
 def main(m):
     if(m == 0):
         print("Solucion Fuerza Bruta")
+        start = timer()
         print(main_FB(copy.deepcopy(Tablero),copy.deepcopy(Fichas)))
+        end = timer()
+        tiempo = (end-start) * 1000000
+        print("Tiempo ejecucion", tiempo)
     elif(m == 1):
         print("Solucion BackTracking")
         main_btk(copy.deepcopy(Tablero))
