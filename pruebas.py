@@ -2,7 +2,7 @@
 ###########################################################################################
 #           ES EL MISMO ARCHIVO QUE PYT.PY PERO TIENE UN FOR GRANDE PARA PRUEBAS           #
 ###########################################################################################
-
+from timeit import default_timer as timer
 from Generator.dominoes import * 
 from FuerzaBruta import *
 from BackTracking import *
@@ -104,3 +104,40 @@ def pruebas():
         main(0)
         main(1)
         print("\n")
+
+
+
+# Variables
+lista_entrada = [1,2,3,4,5]
+lista_entrada_validadas = []
+Medicion_Empirica_bkt = []
+Medicion_Analitica_bkt = []
+Medicion_Empirica_fb = []
+Medicion_Analitica_fb = []
+
+# Realizar las Pruebas
+for n in lista_entrada:
+    board = create_puzzle(n)
+    lista_resultados = []
+    if board != False:
+        lista_entrada_validadas.append(n)
+        # FUERZA BRUTA
+        start = timer()
+        main(0)
+        end = timer()
+        time_emp_fb = (end-start)*1000000000
+        # BACKTRACKING
+        result,hist,time_emp_bkt,time_an = backtracking(board)
+
+        # LISTAS A GRAFICAR
+        Medicion_Empirica_fb.append(time_emp_fb)
+        Medicion_Empirica_bkt.append(time_emp_bkt)
+        Medicion_Analitica_bkt.append(time_an)
+        
+
+
+# Graficar
+graficar(lista_entrada_validadas, Medicion_Empirica_fb, 'Mediciones Empiricas Fuerza Bruta', 'r')
+graficar(lista_entrada_validadas, Medicion_Empirica_bkt, 'Mediciones Empiricas Backtracking', 'r')
+graficar(lista_entrada_validadas, Medicion_Analitica_bkt, 'Mediciones Analiticas Backtracking', 'b')
+

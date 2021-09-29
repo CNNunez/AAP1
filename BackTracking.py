@@ -1,6 +1,6 @@
 from Generator.dominoes import * 
 from timeit import default_timer as timer
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from math import log
 #######################################################################
 ##                      Solucion del proyecto
@@ -15,8 +15,8 @@ from math import log
 def graficar(lista_n, lista_y, titulo, color):
     plt.plot(lista_n,lista_y,'-',linewidth=3,color=color)
     plt.grid()
-    plt.xlabel('Cantidad de muestras')
-    plt.ylabel('Tiempo')
+    plt.xlabel('Tamaño de tablero (n)')
+    plt.ylabel('Tiempo (s)')
     plt.title(titulo)
     plt.show()
 
@@ -195,7 +195,7 @@ def backtracking(board):
         if current == (-1,-1):
             not_at_end_of_board = False
     end = timer()
-    time_emp = (end-start)*1000000
+    time_emp = (end-start)*1000000000
     time_an = ec_analitica_bac(n)
     return result,hist,time_emp,time_an
 
@@ -210,8 +210,8 @@ def ec_analitica_bac(n):
 #######################################################################
 
 # PARA MODO DEBUG
-debug = False # Set True para ver prints de proceso,
-              # puzzle más de 4 puede crashear por el volumen de prints
+debug = False   # Set True para ver prints de proceso,
+                # puzzle más de 4 puede crashear por el volumen de prints
 
 """
 # Variables

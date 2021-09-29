@@ -19,7 +19,7 @@ def fuerza_bruta(board,tiles,solut):
 
                 #Podas
                 if board[i][j] != -1:
-                     
+                    
                     #Pruebas de posiciones, se utilizara valores binarios 0 = horizontal / 1 = vertical
                     if(solut[0] == 0):
                         #Para quitar validaciones de bordes utilizamos un try
