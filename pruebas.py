@@ -39,6 +39,7 @@ def main(m):
     elif(m == 1):
         print("Solucion BackTracking")
         main_btk(copy.deepcopy(Tablero))
+
 #######################################
 #        Main para Fuerza Bruta       #
 #######################################
@@ -104,3 +105,20 @@ def pruebas():
         main(0)
         main(1)
         print("\n")
+
+
+def graficar_FuerzaBruta():
+    lista_entrada = [1,2,3]
+    Medicion_Empirica = []
+
+    # Realizar las Pruebas
+    start = timer()
+    for n in lista_entrada:
+        creacion(n)
+        main_FB(copy.deepcopy(Tablero),copy.deepcopy(Fichas))
+    end = timer()
+    tiempo = (end-start) * 1000000
+    Medicion_Empirica.append(tiempo)
+
+    # Graficar
+    graficar(lista_entrada, Medicion_Empirica, 'Mediciones Empiricas', 'r')
