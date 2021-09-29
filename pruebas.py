@@ -107,8 +107,6 @@ def pruebas():
         print("\n")
 
 
-<<<<<<< HEAD
-
 # Variables
 lista_entrada = [1,2,3,4,5]
 lista_entrada_validadas = []
@@ -142,21 +140,3 @@ for n in lista_entrada:
 graficar(lista_entrada_validadas, Medicion_Empirica_fb, 'Mediciones Empiricas Fuerza Bruta', 'r')
 graficar(lista_entrada_validadas, Medicion_Empirica_bkt, 'Mediciones Empiricas Backtracking', 'r')
 graficar(lista_entrada_validadas, Medicion_Analitica_bkt, 'Mediciones Analiticas Backtracking', 'b')
-
-=======
-def graficar_FuerzaBruta():
-    lista_entrada = [1,2,3]
-    Medicion_Empirica = []
-
-    # Realizar las Pruebas
-    start = timer()
-    for n in lista_entrada:
-        creacion(n)
-        main_FB(copy.deepcopy(Tablero),copy.deepcopy(Fichas))
-    end = timer()
-    tiempo = (end-start) * 1000000
-    Medicion_Empirica.append(tiempo)
-
-    # Graficar
-    graficar(lista_entrada, Medicion_Empirica, 'Mediciones Empiricas', 'r')
->>>>>>> origin/Niko
